@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf­8">
+<title>Herencia</title>
+
+<!--
+Puntuacion = (A, B, C, D)
+A = estilos de linea
+B = numero de IDs
+C = numero de clases
+D = numero de marcas HTML
+-->
+
+<style type="text/css">
+  /* Puntuacion = (A=0, B=1, C=0, D=2) */
+  #caja header h1 { color: blue; }
+
+  /* Puntuacion = (A=0, B=1, C=1, D=1) */
+  #caja .cabecera h1 { color: red; }
+
+  /* Puntuacion = (A=0, B=0, C=0, D=2) */
+  header h1 { color: lime; }
+
+  /* Puntuacion = (A=0, B=0, C=0, D=1) */
+  h1 { color: purple;}
+
+  /* Puntuacion = (A=0, B=0, C=0, D=1) */
+  h1 { color: grey;}
+</style>
+
+</head>
+<body>
+
+<div id="caja">
+
+<header class="cabecera">
+    <h1>Cabecera: header</h1>
+</header>
+
+</div>
+</body>
+</html>
