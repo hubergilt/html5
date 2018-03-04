@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>pagina personal</title>
+<style type="text/css">
+    @font-face {
+        font-family: 'mina';
+        src: url('Mina-Regular.ttf');
+    }
+    
+    body { 
+        color: #174556;
+        background: linear-gradient(antiquewhite, white);
+        text-align: left;
+        font-family: mina;
+    }
+
+    #marco {
+        background: linear-gradient(white, antiquewhite);
+        padding: 10px;
+        margin: 10px;
+        border: 3px solid black;
+        border-radius: 24px;
+    }
+
+    #contenedor {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap:wrap;
+    }
+
+    .vertical {
+      padding:3px;
+      border:1px solid black;
+      background-color:white;
+      width:300px;
+/*      height:400px;*/
+    }
+
+    .horizontal {
+      border:1px solid white;
+      background-color:white;
+      width:300px;
+/*      height:196px;*/
+    }
+    
+</style>
+</head>
+<body>
+<h1>Página personal de Huber Paul Gilt Lopez</h1>
+<h2> Mis Actividades Favoritas </h2>
+    
+<p>
+    Mis activades favoritas son: comer bocaditos, correr, etc.
+</p>
+<div  id='marco'>
+  <div id="contenedor">
+    <div class="vertical">
+      <img class="horizontal" src="simpsons1.png">
+    </div>
+    <div class="vertical">
+      <img class="horizontal" src="simpsons2.png">
+    </div>
+    <div class="vertical">
+      <img class="horizontal" src="simpsons3.png">
+    </div>
+    <div class="vertical">
+      <img class="horizontal" src="simpsons4.png">
+    </div>      
+  </div>
+</div>
+<h3> Mis aplicaciones Favoritas </h3> 
+<p>
+    Mis aplicaciones favoritas son: firefox html en gnu-linux, etc.
+</p>
+<p>Me gusta programar y mi primera pagina web fue:
+    <pre>
+    &lt;html&gt;
+        &lt;head&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            Hello World!
+        &lt;/body&gt;
+    &lt;/html&gt;   
+    </pre>
+
+</p>
+<div  id='marco'>
+  <div id="contenedor">
+      <div class="vertical">
+        <object class="horizontal" type="image/svg+xml" data="Mozilla_Firefox.svg"></object> 
+      </div>    
+      <div class="vertical">
+        <object class="horizontal" type="image/svg+xml" data="html5.svg"></object>   
+      </div>  
+      <div class="vertical">
+        <object class="horizontal" type="image/svg+xml" data="gnu.svg"></object>   
+      </div>       
+  </div>
+</div> 
+
+<h3> Mis video favorito </h3> 
+<p>
+    Mi video favorito es:
+</p>
+<div  id='marco'>
+  <div id="contenedor">
+      <div class="vertical">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/tgbNymZ7vqY"> 
+        </iframe>
+      </div>
+  </div>
+</div> 
+    
+
+    
+</body>
+</html>
