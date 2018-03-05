@@ -1,0 +1,52 @@
+<!DOCTYPE html><html>
+<head>
+  <title>Date</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1 id="h1"></h1>
+  <h3> Huber Paul Gilt Lopez </h3>
+  <h2 id="h2">La fecha y la hora son:</h2>
+  <div id="fecha"></div>
+  <div>Propidades:</div>
+  <div id="elemento_a"></div>
+  <div id="elemento_b"></div>
+  <div id="elemento_c"></div>
+  <div id="elemento_d"></div>
+  <div id="elemento_e"></div>
+
+ <script type="text/javascript">
+  var fecha = new Date();
+  var msj;
+
+  if      (fecha.getHours() < 7)  { msj = "Buenas noches";}
+  else if (fecha.getHours() < 12) { msj = "Buenos días";}
+  else if (fecha.getHours() < 21) { msj = "Buenas tardes";}
+  else                                          { msj = "Buenas noches";}
+
+  document.getElementById("h1").innerHTML    = msj;
+  document.getElementById("fecha").innerHTML = fecha;
+
+  var entityMap = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': '&quot;',
+      "'": '&#39;',
+      "/": '&#x2F;'
+    };
+
+    function escapeHtml(string) {
+      return String(string).replace(/[&<>"'\/]/g, function (s) {
+        return entityMap[s];
+      });
+    }
+
+  document.getElementById("elemento_a").innerHTML = "a) elemento document.getElementById('h2').innerHTML= "+document.getElementById("h2").innerHTML;
+  document.getElementById("elemento_b").innerHTML = "b) elemento document.getElementById('h1').outerHTML= "+escapeHtml(document.getElementById("h1").outerHTML);
+  document.getElementById("elemento_c").innerHTML = "c) propiedad location.href= "+location.href;
+  document.getElementById("elemento_d").innerHTML = "d) propiedad location= "+JSON.stringify(location);
+  document.getElementById("elemento_e").innerHTML = "e) Propidades  screen.width y screen.width= "+screen.width+"x"+screen.width;
+</script>
+</body>
+</html>
