@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ejemplo</title>
+<meta charset="utf-8">
+
+<script type="text/javascript">
+
+  function cuadrado() {
+    var num = document.getElementById("num");
+    num.value = num.value * num.value;
+  }
+
+  function inverso() {
+    var num = document.getElementById("num");
+    num.value = 1/num.value;
+  }
+
+  function raiz2() {
+    var num = document.getElementById("num");
+    num.value = Math.sqrt(num.value);
+  }
+
+  function entero() {
+    var num = document.getElementById("num");
+    if (num.value>0){
+      num.value = Math.floor(num.value);
+    }else{
+      num.value = -Math.ceil(num.value);
+    }
+  }
+
+  var num, acc = 0, op = "";
+
+  function mas()   { acc = num.value;  op = "+"; }
+  function menos() { acc = num.value;  op = "-"; }
+  function multiplicacion() { acc = num.value;  op = "*"; }
+  function division() { acc = num.value;  op = "/"; }
+  function elevado() { acc = num.value;  op = "^"; }
+
+  function calcular() {
+    if (op === "+") {num.value = (+acc + +num.value)}
+    if (op === "-") {num.value = (+acc - +num.value)}
+    if (op === "*") {num.value = (+acc * +num.value)}
+    if (op === "/") {num.value = (+acc / +num.value)}
+    if (op === "^") {num.value = Math.pow(+acc , +num.value)}
+  }
+
+  function inic ()   {num = document.getElementById("num");}
+  function vaciar () {num.value = "";}
+
+</script>
+</head>
+<body onLoad="inic()">
+  <h1>Buenos días, bienvenido a la calculadora de Huber Paul Gilt Lopez</h1>
+  Número:<p>
+  <input type="text" size="12" id="num" onClick="vaciar()"><p>
+
+  <ol>
+    <li>
+      Operaciones unitarias (con un solo operando):<br>
+      <button onclick="cuadrado()">x<sup>2</sup></button>
+      <button onclick="inverso()"> 1/x </button>
+      <button onclick="raiz2()"> sqrt(x) </button>
+      <button onclick="entero()"> parte_entera(x) </button>
+    </li>
+    <li>
+      Operaciones binarias (con dos operandos):<br>
+      <button onClick="mas()">+</button>
+      <button onClick="menos()">-</button>
+      <button onClick="multiplicacion()">*</button>
+      <button onClick="division()">/</button>
+      <button onClick="elevado()">x<sup>y</sup></button>
+      <button onClick="calcular()">=</button>
+    </li>
+  </ol>
+
+  </p>
+</body>
+</html>
