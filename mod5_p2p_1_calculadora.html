@@ -1,0 +1,187 @@
+
+<!DOCTYPE html> 
+<html><head><title>Calculadora</title>
+            <meta charset="utf-8">
+  <script type="text/javascript" 
+          src="jquery-2.1.4.min.js">
+  </script>
+
+  <script type="text/javascript">
+  $(function() {
+     $("#n1").on("click", 
+      function(){ $("#n1").val("");}
+    );
+
+    $("#u1").on("click", 
+      function() {
+        var num = $("#n1");
+        num.val(num.val() * num.val());
+      }
+    );
+
+    $("#u2").on("click", 
+      function() {
+        var num = $("#n1");
+        num.val(1/num.val());
+      }
+    );
+
+    $("#u3").on("click", 
+      function() {
+        var num = $("#n1");
+        num.val(Math.sqrt(num.val()));
+      }
+    );
+
+    $("#u4").on("click", 
+      function() {
+        var num = $("#n1");
+        if (num.val()>0){
+          num.val(Math.floor(num.val()));
+        }else{
+          num.val(-Math.ceil(num.val()));
+        }
+      }
+    );
+
+    $("#u5").on("click", 
+      function() {
+        var num = $("#n1");
+        num.val(Math.pow(2,num.val()));
+      }
+    );  
+
+    $("#u6").on("click", 
+      function() {
+        var num = $("#n1");
+        if(num.val()){
+          n=num.val();
+          if(n>=0){
+            if(n===0)
+              num.val(1);
+            else
+              var fac=1;
+              while(n!==0){
+                fac *= n;
+                n--;
+              }
+              num.val(fac);
+          }
+        }
+      }
+    );
+
+    var num, acc = 0, op = "";
+    var num = $("#n1");
+
+    $("#mas").on("click", 
+      function() {
+        acc = num.val();  op = "+";
+      }
+    );
+
+    $("#menos").on("click", 
+      function() {
+        acc = num.val();  op = "-";
+      }
+    );
+
+    $("#multi").on("click", 
+      function() {
+        acc = num.val();  op = "*";
+      }
+    );
+
+    $("#divi").on("click", 
+      function() {
+        acc = num.val();  op = "/";
+      }
+    ); 
+
+    $("#expo").on("click", 
+      function() {
+        acc = num.val();  op = "^";
+      }
+    );
+
+    $("#igual").on("click", 
+      function() {
+        var num = $("#n1");
+        if (op === "+") {num.val( (+acc + +num.val()) )}
+        if (op === "-") {num.val( (+acc - +num.val()) )}
+        if (op === "*") {num.val( (+acc * +num.val()) )}
+        if (op === "/") {num.val( (+acc / +num.val()) )}
+        if (op === "^") {num.val( Math.pow(+acc , +num.val()) )}
+      }
+    );
+
+    $("#sumatorio").on("click", 
+      function() {
+        var num = $("#n1");
+
+        var lista = num.val().split(",");
+
+        var i = 0, acc = 0;
+        while ( i < lista.length ) {
+          acc = acc + (+lista[i]);
+          i++;
+        }
+        
+        num.val(acc);
+      }
+    );  
+
+    $("#productorio").on("click", 
+    function() {
+      var num = $("#n1");
+
+      var lista = num.val().split(",");
+
+      var i = 0, acc = 1;
+      while ( i < lista.length ) {
+        acc = acc * (+lista[i]);
+        i++;
+      }
+      
+      num.val(acc);
+    }
+  );   
+
+
+  });
+  </script>
+</head>
+
+<body>
+  <h1>Buenos días, bienvenido a la calculadora de de Huber Paul Gilt Lopez</h1>
+  Número:
+  <input type="text" id="n1">
+  <ol>
+    <li>
+      Operaciones unitarias (con un solo operando):<br>
+      <button id="u1">x<sup>2</sup></button>
+      <button id="u2"> 1/x </button>
+      <button id="u3"> sqrt(x) </button>
+      <button id="u4"> parte_entera(x) </button>
+      <button id="u5"> 2<sup>x</sup> </button>
+      <button id="u6"> x! </button>
+    </li>
+    <li>
+      Operaciones binarias (con dos operandos):<br>
+      <button id="mas">+</button>
+      <button id="menos">-</button>
+      <button id="multi">*</button>
+      <button id="divi">/</button>
+      <button id="expo">x<sup>y</sup></button>
+      <button id="igual">=</button>
+    </li>
+    <li>
+      Operaciones con n operandos introducidos en formato CSV:<br>
+      <button id="sumatorio">Σ x</button>
+      <button id="productorio">productorio</button>
+    </li>
+  </ol>
+
+
+</body>
+</html>
